@@ -5,11 +5,33 @@
             margin-top: 20px;
         }
 
+        .container {
+            display: flex;
+            justify-content: space-around;
+        }
+
         .card {
             border: 1px solid #ccc;
             padding: 15px;
             margin-bottom: 15px;
             border-radius: 8px;
+        }
+
+        .item {
+            border: 1px solid #ccc;
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 8px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 0.5rem;
+            height: auto;
+        }
+
+        .item img {
+            width: 50%;
+            margin-bottom: 10px;
         }
 
         .card h3 {
@@ -20,6 +42,11 @@
         .card p {
             margin-bottom: 0;
         }
+
+        a {
+            text-decoration: none;
+            color: black;
+        }
     </style>
 </head>
 
@@ -29,10 +56,34 @@
     <section class="sobre">
 
         <div class="card">
+
+            <h3>Quem sou eu</h3>
+
             <p>Desenvolvedor Júnior Java/Angular na IDS - Software e Assessoria há 2 anos.</p>
             <p>Duovizinhense de 20 anos, já casado.</p>
             <p>Apaixonado por leitura, em especial temas relacionados a filosofia.</p>
-            <p>Amo o trabalho na área do TI, acredito que é a área que mais cresce e tem maior capacidade de tornar melhor a vida de todos. </p>
+            <p>Amo o trabalho na área do TI, acredito que é a área que mais cresce e tem maior capacidade de tornar
+                melhor a vida de todos. </p>
+
+            <br>
+            <h3>Portifólio</h3>
+
+            <div class="grid container">
+                <div class="item col-4">
+                    <img src="pngwing.com.png" alt="">
+                    <p><a href="https://github.com/ANDRE-LCDS/desafio_idevs">Desafio em java</a></p>
+                </div>
+                <div class="item col-4">
+                    <img src="pngwing.com.png" alt="">
+                    <p><a href="https://github.com/ANDRE-LCDS/appflutter">App em flutter</a></p>
+                </div>
+                <div class="item col-4">
+                    <img src="pngwing.com.png" alt="">
+                    <p><a href="https://github.com/ANDRE-LCDS/trabalho_aplicacoes_web_mobile.github.io">Trabalho de html
+                            e css</a></p>
+                </div>
+            </div>
+
         </div>
 
     </section>
