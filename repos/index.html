@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>André Luiz Costa da Silva</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+    <header>
+        <h1>André Luiz Costa da Silva</h1>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#inicio">Início</a></li>
+            <li><a href="#formacao">Formação</a></li>
+            <li><a href="#sobre_mim">Sobre</a></li>
+            <li><a href="#contato">Contato</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section id="conteudo"></section>
+    </main>
+  
+    <footer>
+        <p>Desenvolvido para fins educacionais</p>
+    </footer>
+  
+  <script>
+        const opcoes = document.querySelectorAll('nav ul li a');
+
+        fetch('inicio.html')
+            .then(response => response.text())
+            .then(html => document.getElementById('conteudo').innerHTML = html)
+            .catch(error => console.error(error));
+
+        opcoes.forEach(opcao => {
+            opcao.addEventListener('click', (event) => {
+                event.preventDefault();
+
+                const href = opcao.getAttribute('href');
+                const conteudo = document.getElementById('conteudo');
+
+                if (!href) href = '#inicio';
+
+                fetch(`${href.replace('#', '')}.html`)
+                    .then(response => response.text())
+                    .then(html => conteudo.innerHTML = html)
+                    .catch(error => console.error(error));
+            })
+        });
+    </script>
+
+
+</body>
+
+</html>
